@@ -1,0 +1,35 @@
+.headerContainer {
+    max-width: 1120px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid rgba(231, 231, 231, 1);
+    margin-bottom: 72px;
+}
+
+.headerLogo {
+    width: 137.51px;
+    height: 28.64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerButtons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+}
+
+.headerWrapperButton {
+    width: 56px;
+    height: 56px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
