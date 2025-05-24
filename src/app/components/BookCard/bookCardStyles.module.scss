@@ -1,0 +1,82 @@
+.cardWrapperImg {
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    margin-bottom: 21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardImg {
+    width: 65%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cardDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    gap: 40px;
+    height: 168px;
+}
+
+.cardText {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    height: 96px;
+}
+
+.cardTitle {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    color: rgba(49, 48, 55, 1);
+}
+
+.cardSubtitle {
+    font-family: 'Helios', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: rgba(168, 168, 168, 1);
+    max-width: 351px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cardWrapperOther {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cardPrice {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    color: rgba(49, 48, 55, 1);
+}
+
+.cardWrapperRating {
+    display: flex;
+    justify-content: flex-end;
+    justify-content: center;
+    gap: 8px;
+}
+
+.cardRating {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    justify-content: center;
+}

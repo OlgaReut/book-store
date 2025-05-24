@@ -1,0 +1,19 @@
+.listContainer {
+    padding-bottom: 72px;
+    border-bottom: 1px solid rgba(231, 231, 231, 1);
+    margin-bottom: 48px;
+}
+
+.listCard {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 48px;
+    column-gap: 32px;
+    width: 100%;
+
+    >div {
+        flex: 0 0 calc(32.85% - 16px);
+        box-sizing: border-box;
+    }
+}
