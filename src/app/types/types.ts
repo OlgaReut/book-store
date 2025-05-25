@@ -10,3 +10,9 @@ export type BookCardType = {
 export type BooksCardsType = {
     books: BookCardType[]
 }
+
+export type PaginationType = {
+    totalPages: number,
+    currentPage: number,
+    onPageChange: (page: number) => void
+}

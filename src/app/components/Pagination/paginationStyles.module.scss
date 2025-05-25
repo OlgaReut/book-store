@@ -1,0 +1,42 @@
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Helios', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    color: rgba(168, 168, 168, 1);
+    margin-bottom: 72px;
+
+    &Back {
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &Forward {
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &Pages {
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+    }
+}
+
+.active {
+    color: rgba(49, 48, 55, 1);
+}

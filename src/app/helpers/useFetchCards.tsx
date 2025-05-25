@@ -15,7 +15,6 @@ const useFetchCards = () => {
 
                 const data = await response.json();
                 setBooksCards(data.books)
-                console.log(data.books)
             }
             catch (error) {
                 console.error('Ошибка:', error)

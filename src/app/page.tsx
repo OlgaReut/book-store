@@ -1,16 +1,17 @@
 "use client"
 
-import ListCards from "./components/ListCards/ListCards";
+import DataList from "./components/Pagination/DataList";
 import Subscribe from "./components/Subscribe/Subscribe";
 import Title from "./components/Title/Title";
 import useFetchCards from "./helpers/useFetchCards";
 
 export default function Home() {
     const { booksCards } = useFetchCards()
+    const books = []
     return (
-        <div className="max-w-[1120px] w-full m-auto py-[72px]">
+        <div className="max-w-[1120px] w-full m-auto">
             <Title title={"New Releases Books"} />
-            <ListCards books={booksCards} />
+            <DataList books={booksCards} />
             <Subscribe />
         </div>
     )
