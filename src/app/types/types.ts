@@ -12,7 +12,12 @@ export type BooksCardsType = {
 }
 
 export type PaginationType = {
-    totalPages: number,
-    currentPage: number,
+    totalPages: number
+    currentPage: number
     onPageChange: (page: number) => void
+}
+
+export type SearchContextType = {
+    searchTerm: string
+    setSearchTerm: (term: string) => void
 }
