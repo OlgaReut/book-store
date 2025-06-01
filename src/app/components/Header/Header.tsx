@@ -1,3 +1,4 @@
+import Link from "next/link"
 import InputSearch from "../InputSearch/InputSearch"
 import SvgBasket from "../svg/SvgBasket"
 import SvgFavorites from "../svg/SvgFavorites"
@@ -8,13 +9,13 @@ import style from "./headerStyles.module.scss"
 const Header = () => {
     return (
         <div className={style.headerContainer}>
-            <div className={style.headerLogo}>
+            <Link href="/" className={style.headerLogo}>
                 <SvgLogo />
-            </div>
+            </Link>
             <InputSearch />
             <div className={style.headerButtons}>
                 <button className={style.headerWrapperButton}><SvgFavorites /></button>
-                <button className={style.headerWrapperButton}><SvgBasket /></button>
+                <Link href="/components/Cart"><button className={style.headerWrapperButton}><SvgBasket /></button></Link>
                 <button className={style.headerWrapperButton}><SvgProfile /></button>
             </div>
         </div>

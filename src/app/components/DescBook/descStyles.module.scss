@@ -1,0 +1,93 @@
+.descContainer {
+    padding-top: 41px;
+    border-top: 1px solid rgba(231, 231, 231, 1);
+}
+
+.descWrapperOther {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.descPrice {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 40px;
+    line-height: 60px;
+    font-weight: 700;
+    color: rgba(49, 48, 55, 1);
+}
+
+.descWrapperRating {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+}
+
+.descRating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+}
+
+.descComponents {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+
+    &Names {
+        font-family: 'Helios', sans-serif;
+        font-size: 16px;
+        line-height: 32px;
+        font-weight: 400;
+        color: rgba(168, 168, 168, 1);
+    }
+
+    &Values {
+        font-family: 'Helios', sans-serif;
+        font-size: 16px;
+        line-height: 32px;
+        font-weight: 400;
+        color: rgba(49, 48, 55, 1);
+        text-align: right;
+    }
+}
+
+.descSelect {
+    max-width: 121px;
+    width: 100%;
+    font-family: 'Helios', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: rgba(49, 48, 55, 1);
+    margin-bottom: 59px;
+}
+
+.descBtnCart {
+    width: 100%;
+    background-color: rgba(49, 48, 55, 1);
+    font-family: 'Helios', sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 1);
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    padding: 16px 10px;
+    cursor: pointer;
+}
+
+.descPreview {
+    font-family: 'Helios', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    color: rgba(49, 48, 55, 1);
+    text-align: center;
+}

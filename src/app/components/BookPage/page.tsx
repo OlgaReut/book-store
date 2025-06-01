@@ -1,0 +1,58 @@
+"use client"
+
+import Link from "next/link"
+import style from "./bookStyles.module.scss"
+import Title from "../Title/Title"
+import ImageBook from "../ImageBook/ImageBook"
+import DescBook from "../DescBook/DescBook"
+import TabsBook from "../TabsBook/TabsBook"
+import SocialMedia from "../SocialMedia/SocialMedia"
+import Subscribe from "../Subscribe/Subscribe"
+import { useAppDispatch, useAppSelector } from "@/app/redux/hooks"
+import SimilarBooks from "../SimilarBooks/SimilarBooks"
+import useFetchCards from "@/app/helpers/useFetchCards"
+import SvgGoToBack from "../svg/SvgGoToBack"
+import { openAddedBook } from "@/app/redux/addCartSlice/addCartSlice"
+
+const BookPage = () => {
+    const { booksCards } = useFetchCards()
+
+    const selectedBook = useAppSelector(state => state.bookPage.selectedBook[1]);
+    // const addedBook = useAppSelector(state => state.bookPage.selectedBook)
+    const addedBookObj = {
+        image: useAppSelector(state => state.bookPage.selectedBook[0]),
+        title: useAppSelector(state => state.bookPage.selectedBook[1]),
+        subtitle: useAppSelector(state => state.bookPage.selectedBook[2]),
+        price: useAppSelector(state => state.bookPage.selectedBook[3]),
+        isbn13: useAppSelector(state => state.bookPage.selectedBook[4])
+    }
+
+    const dispatch = useAppDispatch()
+    const handleAddToCart = () => {
+        dispatch(openAddedBook(addedBookObj))
+    }
+
+    if (!selectedBook) {
+        return <div className="max-w-[1120px] w-full m-auto mb-10">Загрузка...</div>;
+    }
+
+    return (
+        <>
+            <div className="max-w-[1120px] w-full m-auto">
+                <Link href="/" className={style.pageLink}><SvgGoToBack /></Link>
+                <Title title={selectedBook} />
+                <div className={style.bookVisual}>
+                    <ImageBook />
+                    <DescBook onAddToCart={handleAddToCart}/>
+                </div>
+                <TabsBook />
+                <SocialMedia />
+                <Subscribe />
+                <SimilarBooks books={booksCards} />
+            </div>
+        </>
+
+    )
+}
+
+export default BookPage

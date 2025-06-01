@@ -1,0 +1,29 @@
+.wrapperImage {
+    max-width: 544px;
+    width: 100%;
+    aspect-ratio: 1/0.87;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.image {
+    width: 65%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.imageWrapperFav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 56px;
+    height: 56px;
+    background-color: rgba(49, 48, 55, 1);
+    cursor: pointer;
+}

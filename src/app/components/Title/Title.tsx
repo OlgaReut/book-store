@@ -1,6 +1,6 @@
 import style from "./titleStyle.module.scss"
 
-type TitleType = {
+export type TitleType = {
     title: string
 }
 
