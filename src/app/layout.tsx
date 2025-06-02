@@ -8,6 +8,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
+import { CartProvider } from "./context/CartContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,11 +36,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Provider store={store}>
-          <SearchProvider>
-            <Header />
-            {children}
-            <Footer />
-          </SearchProvider>
+          <CartProvider>
+            <SearchProvider>
+              <Header />
+              {children}
+              <Footer />
+            </SearchProvider>
+          </CartProvider>
         </Provider>
       </body>
     </html >

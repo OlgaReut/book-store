@@ -18,10 +18,13 @@ export const addCartSlice = createSlice({
       if (!state.addedBook.some(book => book.isbn13 === bookToAdd.isbn13)) {
         state.addedBook.push(bookToAdd);
       }
+    },
+    removeAddedBook: (state, action) => {
+      state.addedBook = state.addedBook.filter(book => book.isbn13 !== action.payload)
     }
   },
 })
 
-export const { openAddedBook } = addCartSlice.actions
+export const { openAddedBook, removeAddedBook } = addCartSlice.actions
 
 export default addCartSlice.reducer
