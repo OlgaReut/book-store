@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import bookPageReducer from './bookPageSlice/bookPageSlice'
 import addCartReducer from './addCartSlice/addCartSlice'
+import favoritesReducer from './favoritesSlice/favoritesSlice'
 
 export const store = configureStore({
     reducer: {
         bookPage: bookPageReducer,
-        bookCart: addCartReducer
+        bookCart: addCartReducer,
+        favoritesBooks: favoritesReducer
     },
 })
 

@@ -5,8 +5,13 @@ import SvgFavorites from "../svg/SvgFavorites"
 import SvgLogo from "../svg/SvgLogo"
 import SvgProfile from "../svg/SvgProfile"
 import style from "./headerStyles.module.scss"
+import { useAppSelector } from "@/app/redux/hooks"
+import SvgFavoritesAdded from "../svg/SvgFavoritesAdded"
+import SvgBasketAdded from "../svg/SvgBasketAdded"
 
 const Header = () => {
+    const favorites = useAppSelector(state => state.favoritesBooks.favorites)
+    const addedBook = useAppSelector(state => state.bookCart.addedBook)
     return (
         <div className={style.headerContainer}>
             <Link href="/" className={style.headerLogo}>
@@ -14,8 +19,9 @@ const Header = () => {
             </Link>
             <InputSearch />
             <div className={style.headerButtons}>
-                <button className={style.headerWrapperButton}><SvgFavorites /></button>
-                <Link href="/components/Cart"><button className={style.headerWrapperButton}><SvgBasket /></button></Link>
+                <Link href="/components/Favorites"><button className={style.headerWrapperButton}>
+                    {favorites?.length ? <SvgFavoritesAdded/> : <SvgFavorites />}</button></Link>
+                    <Link href="/components/Cart"><button className={style.headerWrapperButton}>{addedBook?.length ? <SvgBasketAdded/> : <SvgBasket />}</button></Link>
                 <button className={style.headerWrapperButton}><SvgProfile /></button>
             </div>
         </div>

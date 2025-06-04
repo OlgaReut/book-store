@@ -1,9 +1,11 @@
 import { useAppSelector } from "@/app/redux/hooks";
 import SvgFavoritesLight from "../svg/SvgFavoritesLight"
 import style from "./imageStyles.module.scss"
+import SvgFavorites from "../svg/SvgFavorites";
 
-const ImageBook = () => {
+const ImageBook = ({ onAddFavorite }) => {
     const selectedBook = useAppSelector(state => state.bookPage.selectedBook[0]);
+    const favorites = useAppSelector(state => state.favoritesBooks.favorites);
     if (!selectedBook) return null;
 
     const selectedBookPrice: string = useAppSelector(state => state.bookPage.selectedBook[3]);
@@ -22,7 +24,7 @@ const ImageBook = () => {
     return (
         <div className={style.wrapperImage} style={{ backgroundColor }}>
             <img src={selectedBook} alt="Selected" className={style.image} />
-            <button className={style.imageWrapperFav}>
+            <button className={style.imageWrapperFav} onClick={onAddFavorite}>
                 <SvgFavoritesLight />
             </ button>
         </div>

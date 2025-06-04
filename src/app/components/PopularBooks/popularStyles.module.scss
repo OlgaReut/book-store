@@ -1,0 +1,39 @@
+.similarTitleContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+.similarTitle {
+    text-transform: uppercase;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 60px;
+    color: rgba(49, 48, 55, 1);
+}
+
+.similarArrows {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+}
+
+.similarArrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.similarContainerCards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 73px;
+}

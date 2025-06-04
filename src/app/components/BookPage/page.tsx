@@ -13,13 +13,15 @@ import SimilarBooks from "../SimilarBooks/SimilarBooks"
 import useFetchCards from "@/app/helpers/useFetchCards"
 import SvgGoToBack from "../svg/SvgGoToBack"
 import { openAddedBook } from "@/app/redux/addCartSlice/addCartSlice"
+import { BookCardType } from "@/app/types/types"
+import { addFavorite, removeFavorite } from "@/app/redux/favoritesSlice/favoritesSlice"
 
 const BookPage = () => {
     const { booksCards } = useFetchCards()
 
     const selectedBook = useAppSelector(state => state.bookPage.selectedBook[1]);
-    // const addedBook = useAppSelector(state => state.bookPage.selectedBook)
-    const addedBookObj = {
+
+    const addedBookObj: BookCardType = {
         image: useAppSelector(state => state.bookPage.selectedBook[0]),
         title: useAppSelector(state => state.bookPage.selectedBook[1]),
         subtitle: useAppSelector(state => state.bookPage.selectedBook[2]),
@@ -28,8 +30,13 @@ const BookPage = () => {
     }
 
     const dispatch = useAppDispatch()
+
     const handleAddToCart = () => {
         dispatch(openAddedBook(addedBookObj))
+    }
+
+    const handleAddFavorite = () => {
+        dispatch(addFavorite(addedBookObj));
     }
 
     if (!selectedBook) {
@@ -42,8 +49,8 @@ const BookPage = () => {
                 <Link href="/" className={style.pageLink}><SvgGoToBack /></Link>
                 <Title title={selectedBook} />
                 <div className={style.bookVisual}>
-                    <ImageBook />
-                    <DescBook onAddToCart={handleAddToCart}/>
+                    <ImageBook onAddFavorite={handleAddFavorite} />
+                    <DescBook onAddToCart={handleAddToCart} />
                 </div>
                 <TabsBook />
                 <SocialMedia />
