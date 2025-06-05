@@ -22,7 +22,7 @@ const Header = () => {
                 <Link href="/components/Favorites"><button className={style.headerWrapperButton}>
                     {favorites?.length ? <SvgFavoritesAdded/> : <SvgFavorites />}</button></Link>
                     <Link href="/components/Cart"><button className={style.headerWrapperButton}>{addedBook?.length ? <SvgBasketAdded/> : <SvgBasket />}</button></Link>
-                <button className={style.headerWrapperButton}><SvgProfile /></button>
+                <Link href="/components/Account"><button className={style.headerWrapperButton}><SvgProfile /></button></Link>
             </div>
         </div>
     )

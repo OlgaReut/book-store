@@ -1,0 +1,123 @@
+.accountLink {
+    margin-bottom: 37px;
+    height: 14px;
+    width: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accountForm {
+    margin-bottom: 72px;
+}
+
+.accountFormProfile,
+.accountFormPassword {
+    margin-bottom: 16px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+    color: rgba(49, 48, 55, 1);
+    text-transform: uppercase;
+}
+
+.accountWrapperProfile,
+.accountWrapperNewPassword {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+.accountWrapperProfile {
+    margin-bottom: 48px;
+}
+
+.accountWrapperName,
+.accountWrapperEmail,
+.accountWrapperPassword,
+.accountWrapperInputNewPassword,
+.accountWrapperInputConfirm {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 4px;
+    width: 100%;
+}
+
+.accountWrapperPassword {
+    width: calc(100% / 2 - 16px);
+    margin-bottom: 16px;
+}
+
+.accountWrapperNewPassword {
+    border-bottom: 1px solid rgba(231, 231, 231, 1);
+    padding-bottom: 72px;
+    margin-bottom: 48px;
+}
+
+.accountNameLabel,
+.accountEmailLabel,
+.accountPasswordLabel,
+.accountNewPasswordLabel,
+.accountConfirmLabel {
+    font-family: 'Helios', sans-serif;
+    font-size: 16px;
+    line-height: 32px;
+    font-weight: 700;
+    color: rgba(49, 48, 55, 1);
+}
+
+.accountNameInput,
+.accountEmailInput,
+.accountPasswordInput,
+.accountNewPasswordInput,
+.accountConfirmInput {
+    width: 100%;
+    border: 1px solid rgba(231, 231, 231, 1);
+    padding: 12px 20px;
+
+    &::placeholder {
+        font-family: 'Helios', sans-serif;
+        font-size: 16px;
+        line-height: 32px;
+        font-weight: 400;
+        color: rgba(49, 48, 55, 1);
+    }
+}
+
+.accountFormBtns {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 32px;
+}
+
+.accountFormBtnSave,
+.accountFormBtnCancel {
+    max-width: 256px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 14px 10px;
+}
+
+.accountFormBtnSave {
+    background-color: rgba(49, 48, 55, 1);
+    color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(49, 48, 55, 1);
+}
+
+.accountFormBtnCancel {
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(49, 48, 55, 1);
+    border: 1px solid rgba(231, 231, 231, 1);
+}
