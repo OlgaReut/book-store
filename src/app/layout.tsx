@@ -1,6 +1,5 @@
 "use client"
 
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SearchProvider } from "@/app/context/SearchContext";
@@ -9,6 +8,9 @@ import Footer from "./components/Footer/Footer";
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
 import { CartProvider } from "./context/CartContext";
+import "@fontsource/bebas-neue"; 
+import "@fontsource/bebas-neue/400.css"; 
+// import "@fontsource/bebas-neue/400-italic.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
