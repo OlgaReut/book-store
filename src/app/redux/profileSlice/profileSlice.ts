@@ -78,7 +78,10 @@ export const register = createAsyncThunk('profile/register', async ({ email, pas
     body: raw
   };
   const response = await fetch(URL + USER_PATH, requestOptions);
+  console.log(response)
   if (!response.ok) {
+    const errorData = await response.json(); // Получить тело ошибки
+    console.error('Ошибка при регистрации:', errorData);
     throw new Error('Network response was not ok');
   }
   return true
@@ -111,6 +114,9 @@ const profileSlice = createSlice({
       state.email = ""
       localStorage.removeItem("access")
       localStorage.removeItem("refresh")
+    },
+    setUserName:(state, action) => {
+      state.username = action.payload.username;
     }
   },
   extraReducers: (builder) => {
@@ -151,6 +157,6 @@ const profileSlice = createSlice({
   },
 });
 
-export const { logout } = profileSlice.actions
+export const { logout, setUserName } = profileSlice.actions
 
 export default profileSlice.reducer;

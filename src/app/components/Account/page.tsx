@@ -1,9 +1,32 @@
+"use client"
+
 import Link from "next/link"
 import style from "./accountStyles.module.scss"
 import SvgGoToBack from "../svg/SvgGoToBack"
 import Title from "../Title/Title"
+import { useAppDispatch, useAppSelector } from "@/app/redux/hooks"
+import { logout, setUserName } from "@/app/redux/profileSlice/profileSlice"
+import { useRouter } from "next/navigation"
+import { useEffect } from "react"
 
 const Account = () => {
+    const dispatch = useAppDispatch()
+    const router = useRouter()
+
+    const handleRedirect = () => {
+        router.push("/")
+    }
+
+    const handleLogOut = () => {
+        dispatch(logout())
+    }
+    const userEmail = useAppSelector(state => state.profile.email)
+    useEffect(() => {
+        if (!userEmail) {
+            handleRedirect()
+        }
+    }, [userEmail])
+
     return (
         <>
             <div className="max-w-[1120px] w-full m-auto">
@@ -39,6 +62,7 @@ const Account = () => {
                     <div className={style.accountFormBtns}>
                         <button className={style.accountFormBtnSave}>Save changes</button>
                         <button className={style.accountFormBtnCancel}>cancel</button>
+                        <button className={style.accountFormBtnCancel} onClick={handleLogOut}>Log Out</button>
                     </div>
                 </form>
             </div>

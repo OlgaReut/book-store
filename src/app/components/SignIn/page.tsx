@@ -6,7 +6,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.scss';
 import { ButtonHTMLAttributes, useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "@/app/redux/hooks";
-import { activate, login, register } from "@/app/redux/profileSlice/profileSlice";
+import { activate, login, register, setUserName } from "@/app/redux/profileSlice/profileSlice";
 import { useRouter } from "next/navigation";
 
 type ValueButtonType = {
@@ -19,6 +19,7 @@ const SignIn = (props: ValueButtonType) => {
     const [username, setUsername] = useState("")
     const [uid, setUID] = useState("")
     const [token, setToken] = useState("")
+    const [activeTabIndex, setActiveTabIndex] = useState(0); // 0 - Sign in, 1 - Sign up
 
     const dispatch = useAppDispatch()
     const router = useRouter()
@@ -26,11 +27,6 @@ const SignIn = (props: ValueButtonType) => {
     const handleSignup = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         dispatch(register({ email, password, username }))
-        console.log({ email, password, username })
-    }
-
-    const handleRedirect = () => {
-        router.push("/Success")
     }
 
     const handleActivate = (e: React.FormEvent<HTMLFormElement>) => {
@@ -43,7 +39,7 @@ const SignIn = (props: ValueButtonType) => {
 
     useEffect(() => {
         if(isActivationCompleted){
-            handleRedirect()
+            setActiveTabIndex(0);
         }
     }, [isActivationCompleted])
 
@@ -55,6 +51,7 @@ const SignIn = (props: ValueButtonType) => {
     const handleDirect = () => {
         router.push("/")
     }
+
     const userEmail = useAppSelector(state => state.profile.email)
     useEffect(()=>{
         if(userEmail){
@@ -66,7 +63,7 @@ const SignIn = (props: ValueButtonType) => {
         <>
             <div className="max-w-[1120px] w-full m-auto">
                 <div className={style.signinForm}>
-                    <Tabs className={style.signinWrapperTabsForm}>
+                    <Tabs className={style.signinWrapperTabsForm} selectedIndex={activeTabIndex} onSelect={(index) => setActiveTabIndex(index)}>
                         <TabList className={style.signinWrapperTabs}>
                             <Tab className={style.signinTab}>Sign in</Tab>
                             <Tab className={style.signinTab}>Sign up</Tab>
@@ -75,7 +72,7 @@ const SignIn = (props: ValueButtonType) => {
                             <form onSubmit={handleLogin}>
                                 <div className={style.signinWrapperEmail}>
                                     <label className={style.signinLabel} htmlFor="email">Email</label>
-                                    <input className={style.signinInput} type="email" id="email" placeholder="Your email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                                    <input className={style.signinInput} type="email" id="email" placeholder="Your email" value={email} onChange={(e) => setEmail(e.target.value)} />
                                 </div>
                                 <div className={style.signinWrapperPassword}>
                                     <label className={style.signinLabel} htmlFor="password">Password</label>
@@ -92,7 +89,7 @@ const SignIn = (props: ValueButtonType) => {
                             <form onSubmit={handleSignup}>
                                 <div className={style.signupWrapperName}>
                                     <label className={style.signupLabel} htmlFor="name">Name</label>
-                                    <input className={style.signupInput} type="text" id="name" placeholder="Your name" value={username} onChange={(e) => setUsername(e.target.value)}/>
+                                    <input className={style.signupInput} type="text" id="name" placeholder="Your name" value={username} onChange={(e) => setUsername(e.target.value)} />
                                 </div>
                                 <div className={style.signupWrapperEmail}>
                                     <label className={style.signupLabel} htmlFor="email">Email</label>

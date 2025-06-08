@@ -12,6 +12,7 @@ import SvgBasketAdded from "../svg/SvgBasketAdded"
 const Header = () => {
     const favorites = useAppSelector(state => state.favoritesBooks.favorites)
     const addedBook = useAppSelector(state => state.bookCart.addedBook)
+    const profileEmail = useAppSelector(state => state.profile.email)
     return (
         <div className={style.headerContainer}>
             <Link href="/" className={style.headerLogo}>
@@ -20,9 +21,10 @@ const Header = () => {
             <InputSearch />
             <div className={style.headerButtons}>
                 <Link href="/components/Favorites"><button className={style.headerWrapperButton}>
-                    {favorites?.length ? <SvgFavoritesAdded/> : <SvgFavorites />}</button></Link>
-                    <Link href="/components/Cart"><button className={style.headerWrapperButton}>{addedBook?.length ? <SvgBasketAdded/> : <SvgBasket />}</button></Link>
-                <Link href="/components/SignIn"><button className={style.headerWrapperButton}><SvgProfile /></button></Link>
+                    {favorites?.length ? <SvgFavoritesAdded /> : <SvgFavorites />}</button></Link>
+                <Link href="/components/Cart"><button className={style.headerWrapperButton}>{addedBook?.length ? <SvgBasketAdded /> : <SvgBasket />}</button>
+                </Link>
+                {profileEmail ? <Link href="/components/Account"><button className={style.headerWrapperButton}><SvgProfile /></button></Link> : <Link href="/components/SignIn"><button className={style.headerWrapperButton}><SvgProfile /></button></Link>}
             </div>
         </div>
     )
