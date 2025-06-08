@@ -5,7 +5,7 @@ import style from "./accountStyles.module.scss"
 import SvgGoToBack from "../svg/SvgGoToBack"
 import Title from "../Title/Title"
 import { useAppDispatch, useAppSelector } from "@/app/redux/hooks"
-import { logout, setUserName } from "@/app/redux/profileSlice/profileSlice"
+import { logout } from "@/app/redux/profileSlice/profileSlice"
 import { useRouter } from "next/navigation"
 import { useEffect } from "react"
 

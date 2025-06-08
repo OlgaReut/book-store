@@ -8,9 +8,9 @@ import Footer from "./components/Footer/Footer";
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
 import { CartProvider } from "./context/CartContext";
-import "@fontsource/bebas-neue"; 
-import "@fontsource/bebas-neue/400.css"; 
-// import "@fontsource/bebas-neue/400-italic.css";
+import "@fontsource/bebas-neue";
+import "@fontsource/bebas-neue/400.css";
+import GlobalProvider from "./GlobalProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,13 +38,15 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Provider store={store}>
-          <CartProvider>
-            <SearchProvider>
-              <Header />
-              {children}
-              <Footer />
-            </SearchProvider>
-          </CartProvider>
+          <GlobalProvider>
+            <CartProvider>
+              <SearchProvider>
+                <Header />
+                {children}
+                <Footer />
+              </SearchProvider>
+            </CartProvider>
+          </GlobalProvider>
         </Provider>
       </body>
     </html >

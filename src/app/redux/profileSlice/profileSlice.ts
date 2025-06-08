@@ -115,8 +115,9 @@ const profileSlice = createSlice({
       localStorage.removeItem("access")
       localStorage.removeItem("refresh")
     },
-    setUserName:(state, action) => {
-      state.username = action.payload.username;
+    setUser: (state, action) => {
+      state.username = action.payload.username
+      state.email = action.payload.email
     }
   },
   extraReducers: (builder) => {
@@ -157,6 +158,6 @@ const profileSlice = createSlice({
   },
 });
 
-export const { logout, setUserName } = profileSlice.actions
+export const { logout, setUser } = profileSlice.actions
 
 export default profileSlice.reducer;
