@@ -52,8 +52,14 @@ const SignIn = (props: ValueButtonType) => {
         }
     }, [isActivationCompleted])
 
+    const emailCheck = useAppSelector(state => state.profile.email)
+
     const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        if (emailCheck !== email) {
+            alert("This email is not registered or entered incorrectly.");
+            return;
+        }
         dispatch(login({ email: email, password: password }))
     }
 
@@ -79,6 +85,15 @@ const SignIn = (props: ValueButtonType) => {
     //     handleSetUser(e);
     //     handleLogin(e);
     // };
+
+    const [isPasswordFocused, setIsPasswordFocused] = useState(false);
+    const handlePasswordFocus = () => {
+        setIsPasswordFocused(true);
+    };
+
+    const handlePasswordBlur = () => {
+        setIsPasswordFocused(false);
+    };
 
     return (
         <>
@@ -118,7 +133,12 @@ const SignIn = (props: ValueButtonType) => {
                                     </div>
                                     <div className={style.signupWrapperPassword}>
                                         <label className={style.signupLabel} htmlFor="password">Password</label>
-                                        <input className={style.signupInput} type="password" id="password" placeholder="Your password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                                        <input className={style.signupInput} type="password" id="password" placeholder="Your password" value={password} onChange={(e) => setPassword(e.target.value)} onFocus={handlePasswordFocus} onBlur={handlePasswordBlur} />
+                                        {isPasswordFocused && (
+                                            <div className={style.signupPasswordRules}>
+                                                <p className={style.signupPasswordRulesText}>The password must be at least 8 characters long and contain uppercase letters, numbers and punctuation marks.</p>
+                                            </div>
+                                        )}
                                     </div>
                                     <div className={style.signupWrapperConfirm}>
                                         <label className={style.signupLabel} htmlFor="confirm">Confirm password</label>
