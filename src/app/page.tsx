@@ -1,12 +1,12 @@
 "use client"
 
 import { useContext, useEffect, useState } from "react";
-import BookPage from "./components/BookPage/page";
 import DataList from "./components/Pagination/DataList";
 import Subscribe from "./components/Subscribe/Subscribe";
 import Title, { TitleType } from "./components/Title/Title";
 import useFetchCards from "./helpers/useFetchCards";
 import { SearchContext } from "./context/SearchContext";
+import style from "./components/BookPage/bookStyles.module.scss"
 
 export default function Home() {
     const { booksCards } = useFetchCards()
@@ -25,7 +25,7 @@ export default function Home() {
     }, [searchTerm]);
 
     return (
-        <div className="max-w-[1120px] w-full m-auto">
+        <div className={style.mainContainer}>
             <Title title={title} />
             <DataList books={booksCards} />
             <Subscribe />

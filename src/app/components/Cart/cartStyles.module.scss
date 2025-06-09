@@ -1,3 +1,33 @@
+.cartContainer {
+    max-width: 1120px;
+    width: 100%;
+    margin: 0 auto;
+
+    @media screen and (max-width: 1200px) {
+        max-width: 980px;
+    }
+
+    @media screen and (max-width: 1024px) {
+        max-width: 800px;
+    }
+
+    @media screen and (max-width: 767px) {
+        max-width: 688px;
+    }
+
+    @media screen and (max-width: 688px) {
+        max-width: 550px;
+    }
+
+    @media screen and (max-width: 560px) {
+        max-width: 450px;
+    }
+
+    @media screen and (max-width: 460px) {
+        max-width: 350px;
+    }
+}
+
 .cartLink {
     width: 42px;
     height: 14px;
@@ -15,6 +45,8 @@
     padding-bottom: 48px;
     border-bottom: 1px solid rgba(231, 231, 231, 1);
     margin-bottom: 48px;
+
+    
 }
 
 .cartWrapperImgTitle {
@@ -22,6 +54,11 @@
     justify-content: flex-start;
     align-items: center;
     gap: 32px;
+
+    @media screen and (max-width: 688px) {
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 
 .cartWrapperPriceDelete {
@@ -29,6 +66,24 @@
     justify-content: flex-end;
     align-items: center;
     gap: 113px;
+
+    @media screen and (max-width: 1024px) {
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    @media screen and (max-width: 688px) {
+        gap: 245px;
+    }
+
+    @media screen and (max-width: 560px) {
+        gap: 235px;
+    }
+
+    @media screen and (max-width: 460px) {
+        gap: 265px;
+    }
 }
 
 .cartWrapperImg {
@@ -38,6 +93,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media screen and (max-width: 1024px) {
+        max-width: 208px;
+    }
 }
 
 .cartImg {
@@ -53,6 +112,10 @@
     font-weight: 700;
     color: rgba(49, 48, 55, 1);
     margin-bottom: 8px;
+
+    @media screen and (max-width: 688px) {
+        text-align: center;
+    }
 }
 
 .cartSubtitle {
@@ -62,6 +125,10 @@
     font-weight: 400;
     color: rgba(168, 168, 168, 1);
     margin-bottom: 24px;
+
+    @media screen and (max-width: 688px) {
+        text-align: center;
+    }
 }
 
 .cartWrapperCounter {
@@ -111,4 +178,8 @@
     cursor: pointer;
     width: 56px;
     height: 56px;
+
+    @media screen and (max-width: 688px) {
+        border: 1px solid rgba(49, 48, 55, 1);
+    }
 }

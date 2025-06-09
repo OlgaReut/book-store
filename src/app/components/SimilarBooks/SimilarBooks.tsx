@@ -18,10 +18,10 @@ const SimilarBooks = (props: BooksCardsType) => {
                 <div className={style.similarCard}>
                     {props.books?.length > 0 && (<BookCard key={props.books[0].isbn13} title={props.books[0].title} subtitle={props.books[0].subtitle} price={props.books[0].price} image={props.books[0].image} isbn13={props.books[0].isbn13} />)}
                 </div>
-                <div className={style.similarCard}>
+                <div className={style.similarCardMiddle}>
                     {props.books?.length > 0 && (<BookCard key={props.books[1].isbn13} title={props.books[1].title} subtitle={props.books[1].subtitle} price={props.books[1].price} image={props.books[1].image} isbn13={props.books[1].isbn13} />)}
                 </div>
-                <div className={style.similarCard}>
+                <div className={style.similarCardLast}>
                     {props.books?.length > 0 && (<BookCard key={props.books[2].isbn13} title={props.books[2].title} subtitle={props.books[2].subtitle} price={props.books[2].price} image={props.books[2].image} isbn13={props.books[2].isbn13} />)}
                 </div>
             </div>

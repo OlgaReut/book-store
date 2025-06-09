@@ -29,7 +29,7 @@ const Account = () => {
 
     return (
         <>
-            <div className="max-w-[1120px] w-full m-auto">
+            <div className={style.accountContainer}>
                 <Link href="/" className={style.accountLink}><SvgGoToBack /></Link>
                 <Title title={"Account"} />
                 <form className={style.accountForm}>

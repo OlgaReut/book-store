@@ -36,7 +36,7 @@ const Favorites = () => {
     }
     return (
         <>
-            <div className="max-w-[1120px] w-full m-auto">
+            <div className={style.favoritesContainer}>
                 <Link href="/" className={style.favoritesLink}><SvgGoToBack /></Link>
                 <Title title={"Favorites"} />
                 <div className={style.favoritesBooksCards}>

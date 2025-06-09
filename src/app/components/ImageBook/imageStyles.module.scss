@@ -7,6 +7,11 @@
     justify-content: center;
     align-items: center;
     position: relative;
+
+    @media screen and (max-width: 1024px) {
+        max-width: 460px;
+        aspect-ratio: 1/1;
+    }
 }
 
 .image {

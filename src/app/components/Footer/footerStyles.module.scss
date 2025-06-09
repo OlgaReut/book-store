@@ -8,6 +8,32 @@
     align-items: center;
     gap: 10px;
     border-top: 1px solid rgba(231, 231, 231, 1);
+
+    @media screen and (max-width: 1200px) {
+        max-width: 980px;
+        width: 100%;
+    }
+
+    @media screen and (max-width: 1024px) {
+        max-width: 800px;
+        width: 100%;
+    }
+
+    @media screen and (max-width: 767px) {
+        max-width: 688px;
+    }
+
+    @media screen and (max-width: 688px) {
+        max-width: 550px;
+    }
+
+    @media screen and (max-width: 560px) {
+        max-width: 450px;
+    }
+
+    @media screen and (max-width: 460px) {
+        max-width: 350px;
+    }
 }
 
 .footerText {

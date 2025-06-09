@@ -40,12 +40,12 @@ const BookPage = () => {
     }
 
     if (!selectedBook) {
-        return <div className="max-w-[1120px] w-full m-auto mb-10">Загрузка...</div>;
+        return <div className={style.mainContainer}>Загрузка...</div>;
     }
 
     return (
         <>
-            <div className="max-w-[1120px] w-full m-auto">
+            <div className={style.mainContainer}>
                 <Link href="/" className={style.pageLink}><SvgGoToBack /></Link>
                 <Title title={selectedBook} />
                 <div className={style.bookVisual}>

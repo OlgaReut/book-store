@@ -1,0 +1,89 @@
+.burgerContainer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    max-width: 368px;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 10;
+    padding: 0 40px;
+}
+
+.burgerHeader {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 1px solid rgba(231, 231, 231, 1);
+    margin-bottom: 56px;
+}
+
+.burgerBtnClose {
+    width: 56px;
+    height: 56px;
+    margin: 24px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.headerBurgerLineUp,
+.headerBurgerLineDown {
+    width: 20px;
+    border-bottom: 2px solid rgba(49, 48, 55, 1);
+}
+
+.headerBurgerLineUp {
+    transform: rotate(45deg);
+    position: relative;
+    top: 4px;
+    margin-bottom: 5px;
+}
+
+.headerBurgerLineDown {
+    transform: rotate(-45deg);
+    position: relative;
+    bottom: 3px;
+}
+
+.burgerContainerDesc {
+    height: 81%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 56px;
+}
+
+.burgerDesc {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 48px;
+}
+
+.burgerLink {
+    font-size: 32px;
+    line-height: 44px;
+    font-weight: 700;
+}
+
+.burgerBtn {
+    width: 100%;
+    background-color: rgba(49, 48, 55, 1);
+    cursor: pointer;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 700;
+    padding: 16px;
+}
+
+.burgerSign {
+    width: 100%;
+}

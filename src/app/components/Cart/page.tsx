@@ -68,7 +68,7 @@ const Cart = () => {
 
     return (
         <>
-            <div className="max-w-[1120px] w-full m-auto">
+            <div className={style.cartContainer}>
                 <Link href="/" className={style.cartLink}><SvgGoToBack /></Link>
                 <Title title={"Your cart"} />
                 <div className={style.cartBooksCards}>

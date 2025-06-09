@@ -1,3 +1,10 @@
+.card {
+    @media screen and (max-width: 1200px) {
+        max-width: 328px;
+        width: 100%;
+    }
+}
+
 .cardWrapperImg {
     width: 100%;
     aspect-ratio: 1/1;
@@ -6,6 +13,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media screen and (max-width: 1200px) {
+        width: 328px;
+        aspect-ratio: 1/0.75;
+    }
 }
 
 .cardImg {

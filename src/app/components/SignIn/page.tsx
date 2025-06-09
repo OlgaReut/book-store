@@ -82,7 +82,7 @@ const SignIn = (props: ValueButtonType) => {
 
     return (
         <>
-            <div className="max-w-[1120px] w-full m-auto">
+            <div className={style.signinContainer}>
                 <div className={style.signinForm}>
                     <Tabs className={style.signinWrapperTabsForm} selectedIndex={activeTabIndex} onSelect={(index) => setActiveTabIndex(index)}>
                         <TabList className={style.signinWrapperTabs}>
