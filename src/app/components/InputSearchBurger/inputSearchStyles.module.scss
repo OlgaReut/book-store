@@ -1,0 +1,32 @@
+.inputSearchWrapper {
+    max-width: 542px;
+    width: 100%;
+    position: relative;
+}
+
+.inputSearch {
+    max-width: 542px;
+    width: 100%;
+    border: 1px solid rgba(231, 231, 231, 1);
+    padding: 16px 16px 16px 20px;
+
+    &::placeholder {
+        font-family: "Helios", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 32px;
+        color: rgba(168, 168, 168, 1);
+    }
+
+    &Btn {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+}

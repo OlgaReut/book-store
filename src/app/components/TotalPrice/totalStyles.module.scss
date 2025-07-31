@@ -1,0 +1,59 @@
+.totalContainer {
+    max-width: 256px;
+    width: 100%;
+    margin-bottom: 72px;
+    float: right;
+
+    @media screen and (max-width: 460px) {
+        margin: 0 auto 72px;
+        float: none;
+    }
+}
+
+.totalSumTotal,
+.totalVat,
+.totalTotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.totalSumTotal,
+.totalVat {
+    font-family: "Helios", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(168, 168, 168, 1);
+}
+
+.totalSumValue,
+.totalVatValue {
+    color: rgba(49, 48, 55, 1);
+}
+
+.totalTotal {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 40px;
+    color: rgba(49, 48, 55, 1);
+    text-transform: uppercase;
+}
+
+.totalBtn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(49, 48, 55, 1);
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 1);
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 16px 10px;
+}

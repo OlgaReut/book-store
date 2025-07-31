@@ -1,0 +1,24 @@
+.socialContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 72px;
+}
+
+.socialWrapperLink {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.socialOthers {
+    width: 2px;
+    height: 2px; 
+    background-color: rgba(49, 48, 55, 1);
+    border-radius: 50px;
+    border: 2px solid rgba(49, 48, 55, 1);
+}
